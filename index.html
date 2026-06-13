@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -697,6 +698,7 @@
       .left-col { grid-column: 1; grid-row: 2; }
       .center-col { grid-column: 2; grid-row: 2 / span 2; }
       .right-col { grid-column: 1; grid-row: 3; }
+      .notepad-embed-section { grid-column: 1 / -1; grid-row: 4; }
       .score-ring-wrapper { width: 180px; height: 180px; }
       .score-ring-percentage { font-size: 2rem; }
     }
@@ -1180,6 +1182,83 @@
     .logout-btn:active {
       transform: translateY(0);
     }
+
+    /* Notepad iframe embed */
+.notepad-embed-section {
+  grid-column: 1 / -1;
+  margin-top: 8px;
+}
+.notepad-embed-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px;
+  overflow: hidden;
+}
+.notepad-embed-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.notepad-embed-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+}
+.notepad-embed-icon {
+  width: 40px; height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  background: rgba(59,130,246,0.12);
+}
+.notepad-iframe-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  height: clamp(420px, 75vh, 1100px);
+}
+.notepad-iframe-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+.notepad-embed-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.notepad-embed-footer a {
+  color: var(--accent-blue);
+  text-decoration: none;
+}
+.notepad-embed-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive tweaks */
+@media (max-width: 1200px) {
+  .notepad-iframe-wrapper { height: clamp(420px, 70vh, 900px); }
+}
+@media (max-width: 900px) {
+  .notepad-iframe-wrapper { height: clamp(420px, 65vh, 800px); }
+}
+@media (max-width: 640px) {
+  .notepad-iframe-wrapper { height: clamp(380px, 70vh, 700px); }
+  .notepad-embed-card { padding: 16px; }
+}
 </style>
 <base target="_blank">
 <base target="_blank">
@@ -1440,7 +1519,33 @@
           <div class="card-icon icon-cyan">📈</div>
         </div>
         <div class="mini-chart" id="miniChart"></div>
-      </div> -->
+            </div> -->
+
+    </div> <!-- closes .right-col -->
+
+    <!-- Notepad Embed -->
+    <div class="notepad-embed-section">
+      <div class="notepad-embed-card">
+        <div class="notepad-embed-header">
+          <span class="notepad-embed-title">Metro Notepad Pro</span>
+          <div class="notepad-embed-icon">📝</div>
+        </div>
+        <div class="notepad-iframe-wrapper">
+          <iframe 
+            src="https://metronotepadv2.oneapp.dev/" 
+            title="Metro Notepad Pro"
+            loading="lazy"
+            sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+          ></iframe>
+        </div>
+        <div class="notepad-embed-footer">
+          <span>Embedded from metronotepadv2.oneapp.dev</span>
+          <a href="https://metronotepadv2.oneapp.dev/" target="_blank">Open in new tab ↗</a>
+        </div>
+      </div>
+    </div>
+
+  </div>  <!-- closes .app -->
 
   <script>
     // ===== PARTICLES =====
