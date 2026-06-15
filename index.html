@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,6 +44,57 @@
     border-radius: 10px;
   }
 }
+
+/* ===== EMPATHY IFRAME - CUSTOM SIZING ===== */
+.iframe-empathy-wrap {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 100px);
+  min-height: 600px;
+  overflow: hidden;
+  border-radius: var(--radius-md, 16px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  background: white;
+}
+
+.iframe-empathy-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (max-width: 1200px) {
+  .iframe-empathy-wrap {
+    height: calc(100vh - 110px);
+    min-height: 550px;
+  }
+}
+
+@media (max-width: 900px) {
+  .iframe-empathy-wrap {
+    height: calc(100vh - 115px);
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .iframe-empathy-wrap {
+    height: calc(100vh - 105px);
+    min-height: 450px;
+  }
+}
+
+@media (max-width: 480px) {
+  .iframe-empathy-wrap {
+    height: calc(100vh - 95px);
+    min-height: 400px;
+    border-radius: 12px;
+  }
+}
+
 </style>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -3719,6 +3771,8 @@ header { animation: slideInDown 0.5s ease-out; }
   .reset-call-btn { bottom: 64px !important; }
 }
 </style>
+<base target="_blank">
+<base target="_blank">
 </head>
 <body>
 <!-- ========== ANIMATED BACKGROUND LAYERS ========== -->
@@ -3845,550 +3899,45 @@ header { animation: slideInDown 0.5s ease-out; }
       <!-- Navigation Arrows -->
       <div class="tab-navigator">
         <button class="nav-arrow nav-btn" data-nav-tab="default" data-nav-dir="-1">&#9664;</button>
-        <span class="nav-indicator" id="default-indicator">WE ARE QUALITY</span>
+        <span class="nav-indicator" id="default-indicator">G2G</span>
         <button class="nav-arrow nav-btn" data-nav-tab="default" data-nav-dir="1">&#9654;</button>
       </div>
 
-      <!-- VIEW 0: WEAREQUALITY Checklist -->
+      <!-- VIEW 0: G2G -->
       <div class="tab-view active" id="default-view-0">
-
-        <!-- W -->
-        <div class="section">
-          <div class="sectionTitle">W - WELCOME</div>
-          <div class="row">
-            <div class="script lightviolet">
-              <label>
-                <input type="checkbox" class="check">
-                Hello! Good day! This is &lt;NAME&gt; from MetrobyT-Mobile, how can I help you today?
-              </label>
-            </div>
+        <section>
+          <div style="margin-top:20px; text-align:center;">
+            <img src="https://iamsongoku004-beep.github.io/720508891_1522528296032621_5567750224931824193_n.jpg"
+                 alt="G2G"
+                 style="max-width:100%; height:auto; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.1);">
           </div>
-        </div>
-
-        <!-- E -->
-        <div class="section">
-          <div class="sectionTitle">E - EMPATHY</div>
-          <div class="row">
-            <div class="script green">
-              <label>
-                <input type="checkbox" class="check">
-                GOT IT! / SURE! I have great news for a very NICE customer like you! This one should be easy, and I've got you totally covered!
-              </label>
-            </div>
-            <div class="script yellow">
-              <label>
-                <input type="checkbox" class="check">
-                GOT IT! SURE! Thanks for your patience and understanding, I know these things can worry us sometimes, I'm here to guide you.
-              </label>
-            </div>
-            <div class="script red">
-              <label>
-                <input type="checkbox" class="check">
-                OH NO! That's terrible! I'm truly sorry you had a rough time with this issue, let's make this right for you today. We'll make it up to you.
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <!-- A -->
-        <div class="section">
-          <div class="sectionTitle">A - AUTHENTICATION</div>
-          <div class="row">
-            <div class="script mediumviolet">
-              <label>
-                <input type="checkbox" class="check">
-                Let's go ahead and start! Can I have your mobile number please? Can I have your first and last name please? I am sending you a one-time PIN through a text message, can you please check your SMS inbox, and kindly read it back?
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <!-- R -->
-        <div class="section">
-          <div class="sectionTitle">R - RAPPORT</div>
-          <div class="row">
-            <div class="script green">
-              <label>
-                <input type="checkbox" class="check">
-                While we are accessing your account, how are you, any plans for the day / weekend/ holidays?
-              </label>
-            </div>
-            <div class="script yellow">
-              <label>
-                <input type="checkbox" class="check">
-                While waiting for your account access, how are you, any plans for the day / weekend / holidays?
-              </label>
-            </div>
-            <div class="script red">
-              <label>
-                <input type="checkbox" class="check">
-                We will access your account soon. Seems like you have a lot going on. I hope you are doing alright. How are you holding up?
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <!-- E -->
-        <div class="section">
-          <div class="sectionTitle">E - EXPECTATIONS</div>
-          <div class="row">
-            <div class="script green">
-              <label>
-                <input type="checkbox" class="check">
-                I have your account ready now. This call should be quick! Let's wrap this up right away! Let's get this done together. Can I count on you to stay on the line until we are done?
-              </label>
-            </div>
-            <div class="script yellow">
-              <label>
-                <input type="checkbox" class="check">
-                I have your account ready. We have a few things to deal with, but I'm here to make things easy! Let's get this done together. Can I count on you to stay on the line until we are done?
-              </label>
-            </div>
-            <div class="script red">
-              <label>
-                <input type="checkbox" class="check">
-                With all these issues, you have been more than patient. I super appreciate you, so we will make this right. Let's get this done together. Can I count on you to stay on the line until we are done?
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <!-- Q -->
-        <div class="section">
-          <div class="sectionTitle">Q - QUICK MENTIONS</div>
-          <div class="row">
-            <div class="script teal">
-              <label>
-                <input type="checkbox" class="check">
-                Today's a great day to take advantage of our special promotions you are eligible for. I will share them later after we resolve our concern. Sounds like a plan?
-              </label>
-            </div>
-            <div class="script green">
-              <label>
-                <input type="checkbox" class="check">
-                You make our jobs easier just by being the amazing customer that you are. Thank you for your time and loyalty.
-              </label>
-            </div>
-            <div class="script yellow">
-              <label>
-                <input type="checkbox" class="check">
-                You are incredibly understanding, that's why you deserve to hear some amazing promotions. I will share them later after we prioritize our first concern. Sounds like a plan?
-              </label>
-            </div>
-            <div class="script pink">
-              <label>
-                <input type="checkbox" class="check">
-                Your time and patience with me mean a lot. Let's use that to get you the solutions you deserve. Let us get started.
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <!-- U -->
-        <div class="section">
-          <div class="sectionTitle">U - UNDERSTAND THE ISSUE</div>
-          <div class="row">
-            <div class="script green">
-              <label>
-                <input type="checkbox" class="check">
-                To start the process, I need to confirm certain information. Let me ask (or confirm) a few details, please?
-              </label>
-            </div>
-            <div class="script yellow">
-              <label>
-                <input type="checkbox" class="check">
-                To simplify things and guarantee correct process, let me ask (or confirm) a few details, please?
-              </label>
-            </div>
-            <div class="script red">
-              <label>
-                <input type="checkbox" class="check">
-                I don't want to repeat your time and effort, yet to find the right direction can you give me more patience, and let me ask for a few more details, please?
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <!-- A -->
-        <div class="section">
-          <div class="sectionTitle">A - ASSURE/REASSURE</div>
-          <div class="row">
-            <div class="script green">
-              <label>
-                <input type="checkbox" class="check">
-                I can assure you that you are in good hands. I'll handle this personally until the complete resolution. Please remain on the line until completion of this call, can I have your assurance, please?
-              </label>
-            </div>
-            <div class="script yellow">
-              <label>
-                <input type="checkbox" class="check">
-                We will take the time we need so you are fully informed and comfortable with the next steps. Please remain on the line until completion of this call, can I have your assurance, please?
-              </label>
-            </div>
-            <div class="script red">
-              <label>
-                <input type="checkbox" class="check">
-                You've been through enough with this issue. I'm here to turn things around for you until the end. Please remain on the line until completion of this call, can I have your assurance, please?
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <!-- L -->
-        <div class="section">
-          <div class="sectionTitle">L - LEAD TO RESOLVED</div>
-          <div class="row">
-            <div class="script darkviolet">
-              <label>
-                <input type="checkbox" class="check">
-                I can assure you • I am absolutely sure • I have no doubt • I already processed • I can definitely see here • I am 100% certain • We are confident that the next step will • We are almost done and close to final resolution
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <!-- I -->
-        <div class="section">
-          <div class="sectionTitle">I - I PERSONAL GUARANTEE</div>
-          <div class="row">
-            <div class="script green">
-              <label>
-                <input type="checkbox" class="check">
-                I am almost done toward a guarantee resolution. Please give me a quick minute. Also we surely loved giving you great experience so we would love to hear your feedback, can I have your commitment to stay for a quick survey after we resolve, please?
-              </label>
-            </div>
-            <div class="script peach">
-              <label>
-                <input type="checkbox" class="check">
-                I can personally guarantee that you made the right choice to (ADD NEXT STEP). You have been a great and patient partner today, and I would love to hear your feedback on your experience with me, can I have your commitment to stay for a quick survey after we resolve, please?
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <!-- T -->
-        <div class="section">
-          <div class="sectionTitle">T - THANK THE PARTNERSHIP</div>
-          <div class="row">
-            <div class="script green">
-              <label>
-                <input type="checkbox" class="check">
-                Thanks to our partnership, we have achieved a complete resolution you truly deserve. And you deserve more! In fact, you are super qualified for..(SPE/SALE)
-              </label>
-            </div>
-            <div class="script yellow">
-              <label>
-                <input type="checkbox" class="check">
-                Thanks to us, your issue has been COMPLETELY RESOLVED. Metro and I are very happy to have satisfied you with a complete and proper resolution today.
-              </label>
-            </div>
-            <div class="script red">
-              <label>
-                <input type="checkbox" class="check">
-                Thanks to us, I'm sure we found the most suitable action to finalize our issue today. Your patience amazes me, and I greatly appreciate our partnership.
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <!-- Y -->
-        <div class="section">
-          <div class="sectionTitle">Y - YES YOU WIN</div>
-          <div class="row">
-            <div class="script green">
-              <label>
-                <input type="checkbox" class="check">
-                And YES, just to make sure this call is one and done, Before you take the quick survey, is there anything else I can do for you? (THANK YOU, STAY ON THE LINE!)
-              </label>
-            </div>
-            <div class="script peach">
-              <label>
-                <input type="checkbox" class="check">
-                And YES, I had a great time assisting you today. Before we end, do you have other questions I can help you with before I transfer you to the survey? (THANK YOU, STAY ON THE LINE)
-              </label>
-            </div>
-          </div>
-        </div>
+        </section>
       </div>
 
-      <!-- VIEW 1: G2G MENU CHECKLIST (MATCHES WEAREQUALITY FORMAT) -->
+      <!-- VIEW 1: PAYMENT -->
       <div class="tab-view" id="default-view-1">
-
-        <!-- W - WELCOME -->
-        <div class="section">
-          <div class="sectionTitle">W - WELCOME</div>
-          <div class="row">
-            <div class="script lightviolet">
-              <label>
-                <input type="checkbox" class="check">
-                Hello! Good Day! This is &lt;NAME&gt; from Metro by T-Mobile, how can I help you today?
-              </label>
-            </div>
+        <section>
+          <div style="margin-top:20px; text-align:center;">
+            <img src="https://iamsongoku004-beep.github.io/722468622_1024413430090766_3560149192732877466_n.jpg"
+                 alt="PAYMENT"
+                 style="max-width:100%; height:auto; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.1);">
           </div>
-        </div>
-
-        <!-- E - EMPATHY -->
-        <div class="section">
-          <div class="sectionTitle">E - EMPATHY</div>
-          <div class="row">
-            <div class="script green">
-              <label>
-                <input type="checkbox" class="check">
-                Got it! This one should be easy. I am here! I've got you totally covered!
-              </label>
-            </div>
-            <div class="script yellow">
-              <label>
-                <input type="checkbox" class="check">
-                Got it! I know these things can worry us sometimes, but, I am here. I will surely guide you.
-              </label>
-            </div>
-            
-          </div>
-        </div>
-
-        <!-- A - AUTHENTICATION -->
-        <div class="section">
-          <div class="sectionTitle">A - AUTHENTICATION</div>
-          <div class="row">
-            <div class="script green">
-              <label>
-                <input type="checkbox" class="check">
-                Your account security matters, so I'll send you a OTP to access the account.
-              </label>
-            </div>
-            <div class="script yellow">
-              <label>
-                <input type="checkbox" class="check">
-                It's best to verify your account with a valid ID, because your account security matters.
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <!-- R - RAPPORT -->
-        <div class="section">
-          <div class="sectionTitle">R - RAPPORT</div>
-          <div class="row">
-            <div class="script green">
-              <label>
-                <input type="checkbox" class="check">
-                How are you? &lt;cx says they are good&gt; That's great, let's make your day better!
-              </label>
-            </div>
-            <div class="script yellow">
-              <label>
-                <input type="checkbox" class="check">
-                How are you? &lt;cx says not so good&gt; Oh no, but don't worry, I'll make your day better!
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <!-- E - EXPECTATION -->
-        <div class="section">
-          <div class="sectionTitle">E - EXPECTATION</div>
-          <div class="row">
-            <div class="script green">
-              <label>
-                <input type="checkbox" class="check">
-                Let's get this done together until the end. Can I count on you to stay on the line?
-              </label>
-            </div>
-            <div class="script yellow">
-              <label>
-                <input type="checkbox" class="check">
-                Let's get this done together until the end. Can I count on you to stay on the line?
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <!-- Q - QUICK APPRECIATION -->
-        <div class="section">
-          <div class="sectionTitle">Q - QUICK APPRECIATION</div>
-          <div class="row">
-            <div class="script green">
-              <label>
-                <input type="checkbox" class="check">               
-                You truly deserve a special promotion from us, BUT let's resolve our concern first.
-              </label>
-            </div>
-            <div class="script yellow">
-              <label>
-                <input type="checkbox" class="check">
-Thanks for being patient, you truly deserve to be heard, helped, and valued today.              </label>
-            </div>
-            
-          </div>
-        </div>
-
-        <!-- U - UNDERSTAND -->
-        <div class="section">
-          <div class="sectionTitle">U - UNDERSTAND</div>
-          <div class="row">
-            <div class="script green">
-              <label>
-                <input type="checkbox" class="check">
-                Given all the information you shared, I will look into this properly, in your account.
-              </label>
-            </div>
-            <div class="script yellow">
-              <label>
-                <input type="checkbox" class="check">
-                Given all that you shared, I will look into this properly, starting with asking some questions.
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <!-- A - ASSURE/REASSURE -->
-        <div class="section">
-          <div class="sectionTitle">A - ASSURE/REASSURE</div>
-          <div class="row">
-            <div class="script green">
-              <label>
-                <input type="checkbox" class="check">
-                I can assure you that I'll handle this until complete resolution, just stay with me, please.
-              </label>
-            </div>
-            <div class="script yellow">
-              <label>
-                <input type="checkbox" class="check">
-                I can assure you that we will exhaust all steps to resolve, just stay with me, please.
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <!-- L - LEAD TO RESOLVE -->
-        <div class="section">
-          <div class="sectionTitle">L - LEAD TO RESOLVE</div>
-          <div class="row">
-            <div class="script green">
-              <label>
-                <input type="checkbox" class="check">
-                You can confidently tell that changes were made when you login to your app.
-              </label>
-            </div>
-            <div class="script yellow">
-              <label>
-                <input type="checkbox" class="check">
-                You can confidently tell that we have the most suitable action once the final step is done.
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <!-- I - I CAN - PERSONAL -->
-        <div class="section">
-          <div class="sectionTitle">I - I CAN - PERSONAL</div>
-          <div class="row">
-            <div class="script green">
-              <label>
-                <input type="checkbox" class="check">
-                              I can personally guarantee that this is resolved. In fact, you can perform a test call now.
-
-              </label>
-            </div>
-            <div class="script yellow">
-              <label>
-                <input type="checkbox" class="check">
-                I can personally guarantee that all issues over the phone are covered, next step is to...
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <!-- T - THANK/PITCH -->
-        <div class="section">
-          <div class="sectionTitle">T - THANK/PITCH</div>
-          <div class="row">
-            <div class="script green">
-              <label>
-                <input type="checkbox" class="check">
-                              Before I let you go, I would like to share that you are super qualified for a promo!
-
-              </label>
-            </div>
-            <div class="script yellow">
-              <label>
-                <input type="checkbox" class="check">
-                Before I let you go, I would like to remind you we have a quick survey after this call.
-              </label>
-            </div>
-  
-          </div>
-        </div>
-
-        <!-- Y - YES, YOU WIN! -->
-        <div class="section">
-          <div class="sectionTitle">Y - YES, YOU WIN!</div>
-          <div class="row">
-            <div class="script green">
-              <label>
-                <input type="checkbox" class="check">
-                &lt;one and done&gt; Before you take the quick survey, is there anything else I can do for you?
-              </label>
-            </div>
-            <div class="script peach">
-              <label>
-                <input type="checkbox" class="check">
-                I had a great time talking to you today, but is there anything else I can do for you?
-              </label>
-            </div>
-          </div>
-        </div>
-
+        </section>
       </div>
 
-      <!-- VIEW 2: WEAREQUALITY Image 1 -->
+      <!-- VIEW 2: UHL -->
       <div class="tab-view" id="default-view-2">
         <section>
           <div style="margin-top:20px; text-align:center;">
-            <img src="https://uploads.onecompiler.io/42xywusf3/44nxd67xk/image.png"
-                 alt="WEAREQUALITY"
-                 style="max-width:100%; height:auto; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.1);">
-          </div>
-        </section>
-      </div>
-
-      <!-- VIEW 3: G2G Menu Image 1 -->
-      <div class="tab-view" id="default-view-3">
-        <section>
-          <div style="margin-top:20px; text-align:center;">
-            <img src="https://uploads.onecompiler.io/42xywusf3/44peqsxrp/696459086_1716953969293082_1077884205489578308_n.jpg"
-                 alt="G2G Menu 1"
-                 style="max-width:100%; height:auto; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.1);">
-          </div>
-        </section>
-      </div>
-
-      <!-- VIEW 4: G2G Menu Image 2 -->
-      <div class="tab-view" id="default-view-4">
-        <section>
-          <div style="margin-top:20px; text-align:center;">
-            <img src="https://uploads.onecompiler.io/42xywusf3/44peqsxrp/696323850_4502547486732437_6783279396796675492_n.jpg"
-                 alt="G2G Menu 2"
-                 style="max-width:100%; height:auto; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.1);">
-          </div>
-        </section>
-      </div>
-
-      <!-- VIEW 5: WEAREQUALITY Image 2 -->
-      <div class="tab-view" id="default-view-5">
-        <section>
-          <div style="margin-top:20px; text-align:center;">
-            <img src="https://uploads.onecompiler.io/42xywusf3/44fah8mc8/640136114_1237238258594696_7080698108644844841_n.jpg"
-                 alt="WEAREQUALITY"
+            <img src="https://iamsongoku004-beep.github.io/720570612_1017271670682366_933979075714608331_n.jpg"
+                 alt="UHL"
                  style="max-width:100%; height:auto; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.1);">
           </div>
         </section>
       </div>
 
     </div>
-
-    <!-- CANCELLATIONS -->
+<!-- CANCELLATIONS -->
     <div id="cancellations" style="display:none;">
 
       <!-- Navigation Arrows -->
@@ -4424,34 +3973,13 @@ Thanks for being patient, you truly deserve to be heard, helped, and valued toda
 
     <!-- EMPATHY WITH ACTION -->
 <div id="empathy" style="display:none;">
-
-  <!-- Navigation Arrows -->
-  <div class="tab-navigator">
-    <button class="nav-arrow nav-btn" data-nav-tab="empathy" data-nav-dir="-1">&#9664;</button>
-    <span class="nav-indicator" id="empathy-indicator">Image 1 / 2</span>
-    <button class="nav-arrow nav-btn" data-nav-tab="empathy" data-nav-dir="1">&#9654;</button>
+  <div class="iframe-empathy-wrap">
+    <iframe 
+      src="https://iamsongoku004-beep.github.io/empathy/" 
+      title="Metro Empathy Phrasebook"
+      loading="lazy"
+    ></iframe>
   </div>
-
-  <!-- VIEW 1: Existing Image -->
-  <div class="tab-view active" id="empathy-view-0">
-    <section>
-      <img src="https://uploads.onecompiler.io/42xywusf3/44nxd67xk/image-1.png"
-           alt="Empathy With Action"
-           style="max-width:100%; height:auto; border-radius:16px; margin-bottom:20px; box-shadow:0 10px 30px rgba(0,0,0,0.1);">
-    </section>
-  </div>
-
-  <!-- VIEW 2: NEW IMAGE -->
-  <div class="tab-view" id="empathy-view-1">
-    <section>
-      <div style="margin-top:20px; text-align:center;">
-        <img src="https://uploads.onecompiler.io/42xywusf3/1779789921647/40418ed1-b188-4287-99fe-3dff398ce56c.png"
-             alt="Empathy Reference"
-             style="max-width:100%; height:auto; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.1);">
-      </div>
-    </section>
-  </div>
-
 </div>
 
     <!-- SALES -->
@@ -4536,7 +4064,7 @@ Thanks for being patient, you truly deserve to be heard, helped, and valued toda
 <div id="apps" style="display:none;">
   <div class="iframe-responsive-wrap">
     <iframe 
-      src="https://metroapps.oneapp.dev/" 
+      src="https://iamsongoku004-beep.github.io/apps" 
       title="Metro Apps"
       loading="lazy"
     ></iframe>
@@ -4558,7 +4086,7 @@ Thanks for being patient, you truly deserve to be heard, helped, and valued toda
 <div id="troubleshooting" style="display:none;">
   <div class="iframe-responsive-wrap">
     <iframe 
-      src="https://metrotroubleshooting.oneapp.dev/" 
+      src="https://iamsongoku004-beep.github.io/troubleshooting" 
       title="Metro Troubleshooting Guide"
       loading="lazy"
     ></iframe>
@@ -4669,7 +4197,7 @@ Thanks for being patient, you truly deserve to be heard, helped, and valued toda
             </div>
             <div class="spiel-card-body">
               <div class="spiel-subtitle">Email:</div>
-              <div class="spiel-email">PPMilUnl@T-Mobile.com</div>
+              <div class="spiel-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7323233e1a1f261d1f33275e3e1c111a1f165d101c1e">[email&#160;protected]</a></div>
               <div class="spiel-subtitle">Include:</div>
               <div class="spiel-steps">
                 <div class="spiel-step">Mobile number</div>
@@ -5028,7 +4556,7 @@ Thanks for being patient, you truly deserve to be heard, helped, and valued toda
   ⟳
 </button>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 
 // ==================== TAB CONTENT NAVIGATION ====================
 let tabViewIndices = {
@@ -5042,9 +4570,9 @@ let tabViewIndices = {
 };
 
 const tabViewCounts = {
-  default: 6,
+  default: 3,
   cancellations: 2,
-  empathy: 2,
+  empathy: 0,
   sales: 2,
   extension: 4,
   troubleshooting: 1,
@@ -5052,9 +4580,9 @@ const tabViewCounts = {
 };
 
 const tabViewLabels = {
-  default: ['WEAREQUALITY', 'NEW G2G', 'WE ARE QUALITY', 'G2G Img 1', 'G2G Img 2', 'Img 2'],
+  default: ['G2G', 'PAYMENT', 'UHL'],
   cancellations: ['Image 1', 'Image 2'],
-  empathy: ['Image 1', 'Image 2'],
+  empathy: ['Empathy Phrasebook'],
   sales: ['Image 1', 'Image 2'],
   extension: ['Image 1', 'Image 2', 'Image 3', 'Image 4'],
   troubleshooting: ['Image 1'],
@@ -7276,5 +6804,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"e3c1c9af36de41759418005494a48906","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
