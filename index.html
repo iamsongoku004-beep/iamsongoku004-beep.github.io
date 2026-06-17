@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -536,7 +534,8 @@ header h2 {
   top: 126px;
   width: 340px;
   min-width: 280px;
-  max-height: calc(100vh - 30px);
+  height: calc(100vh - 140px);
+  max-height: calc(100vh - 140px);
   background: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
   padding: 20px;
@@ -551,6 +550,14 @@ header h2 {
 }
 
 /* Wide desktop - full size */
+/* Notes section wrapper - makes textarea fill available height */
+.notes-section {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
 @media (min-width: 1401px) {
   .notes-panel {
     width: 360px;
@@ -597,9 +604,7 @@ header h2 {
     padding: 14px;
     gap: 12px;
   }
-  .quick-notes textarea {
-    height: 160px;
-  }
+  
   .stats-card-value {
     font-size: 1.4rem;
   }
@@ -934,24 +939,28 @@ header h2 {
   border-radius: 2px;
 }
 
-/* Quick Notes */
+/* Quick Notes - fill panel to match call flow image height */
 .quick-notes {
   background: #faf9ff;
   border-radius: 16px;
   padding: 14px;
   border: 2px solid #e9d8fd;
-  flex-shrink: 0;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .quick-notes textarea {
   width: 100%;
-  height: 260px;
+  height: 100%;
+  flex: 1;
   border: none;
   background: transparent;
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   line-height: 1.6;
-  resize: vertical;
+  resize: none;
   outline: none;
   color: #4a5568;
 }
@@ -1843,9 +1852,7 @@ header h2 {
   .score-value {
     font-size: 1.6rem;
   }
-  .quick-notes textarea {
-    height: 160px;
-  }
+  
 
   .tab-content {
     width: 100%;
@@ -2431,6 +2438,9 @@ header h2 {
   border: 1px solid rgba(var(--theme-primary-rgb), 0.1);
   box-shadow: 0 2px 12px rgba(0,0,0,0.03);
   transition: all var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .quick-notes:focus-within, .call-tracker:focus-within {
@@ -2442,6 +2452,8 @@ header h2 {
   font-size: 14px;
   line-height: 1.7;
   color: #2d3748;
+  height: 100%;
+  flex: 1;
 }
 
 .quick-notes textarea::placeholder, .call-tracker textarea::placeholder {
@@ -3773,6 +3785,8 @@ header { animation: slideInDown 0.5s ease-out; }
 </style>
 <base target="_blank">
 <base target="_blank">
+<base target="_blank">
+<base target="_blank">
 </head>
 <body>
 <!-- ========== ANIMATED BACKGROUND LAYERS ========== -->
@@ -3814,79 +3828,15 @@ header { animation: slideInDown 0.5s ease-out; }
   <!-- NOTES PANEL - FIXED POSITION -->
   <div class="notes-panel">
 
-    <!-- STATS COUNTER SECTION -->
-    <div>
-      <div class="section-header">Call Stats</div>
-      <div class="stats-container">
-        <div class="stats-card">
-          <div class="stats-card-label">RELEASE</div>
-          <div class="stats-card-value" id="release-stats">0</div>
-          <div class="stats-card-controls">
-            <button class="stats-card-btn minus" onclick="updateStatsValue('release', -1)">−</button>
-            <button class="stats-card-btn plus release" onclick="updateStatsValue('release', 1)">+</button>
-          </div>
-        </div>
-        <div class="stats-card">
-          <div class="stats-card-label">DROP</div>
-          <div class="stats-card-value" id="drop-stats">0</div>
-          <div class="stats-card-controls">
-            <button class="stats-card-btn minus" onclick="updateStatsValue('drop', -1)">−</button>
-            <button class="stats-card-btn plus drop" onclick="updateStatsValue('drop', 1)">+</button>
-          </div>
-        </div>
-        <div class="stats-card">
-          <div class="stats-card-label">TRANSFER</div>
-          <div class="stats-card-value" id="transfer-stats">0</div>
-          <div class="stats-card-controls">
-            <button class="stats-card-btn minus" onclick="updateStatsValue('transfer', -1)">−</button>
-            <button class="stats-card-btn plus transfer" onclick="updateStatsValue('transfer', 1)">+</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Score Display -->
-      <div class="score-box pass" id="scoreBox">
-        <div class="score-label">Quality Score</div>
-        <div class="score-value" id="scoreValue">0.00%</div>
-        <div class="status-text" id="statusText">PASS</div>
-      </div>
-
-      <!-- Release Needed Display -->
-      <div class="release-needed-box" id="releaseNeededBox">
-        <div class="release-needed-label">📊 To Reach 85% Pass</div>
-        <div class="release-needed-value" id="releaseNeededValue">Need 0 more releases</div>
-        <div class="release-needed-detail" id="releaseNeededDetail">You're on track!</div>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
     <!-- Quick Notes -->
-    <div>
+    <div class="notes-section">
       <div class="section-header">Notepad</div>
       <div class="quick-notes">
         <textarea id="quickNotes" placeholder="Type your quick notes here..."></textarea>
       </div>
     </div>
 
-    <div class="divider"></div>
-
-    <!-- Call Note Tracker -->
-    <div>
-      <div class="section-header">Call Note Tracker</div>
-      <div class="call-tracker">
-        <textarea id="callNotes" placeholder="Save important call details here..."></textarea>
-        <div class="tracker-buttons">
-          <button class="tracker-btn" id="saveNote">💾 Save Call</button>
-          <button class="tracker-btn" id="clearNote">✕ Clear</button>
-        </div>
-
-        <div class="call-log-container">
-          <div class="call-log-header">Recent Calls (Unlimited)</div>
-          <ul id="callLog"></ul>
-        </div>
-      </div>
-    </div>
+    
 
   </div>
 
